@@ -22,15 +22,15 @@
 }
 
 [data-theme="dark"] {
-    --background: rgba(26,32,44);
-    --background-2nd: rgb(35, 45, 61);
-    --grey: #4a5568;
-    --grey-light: #718096;
-    --grey-2nd: #8291a7;
+    --background: #C4F9FF;
+    --background-2nd: #232D3D;
+    --grey: #FF7415;
+    --grey-light: #FF7415;
+    --grey-2nd: #FF7415;
 
-    --text: #e2e8f0;
-    --text-light: rgba(203,213,224);
-    --text-dark:#f7f9fc;
+    --text: #FF7415;
+    --text-light: #A1B3BC;
+    --text-dark: #CBD5E0;
 }
 
 html,
