@@ -26,14 +26,12 @@ export const mutations = {
 	},
 	show(state, { modal, data }) {
 		if (!modals.includes(modal)) throw new Error(`Unknown modal: ${ modal }`)
-		console.log(modal)
 		state.show = {
 			...state.show,
 			[modal]: true
 		}
 
 		state.data = { ...state.data, ...data }
-		console.log(state.show)
 	},
 	hide(state, modal) {
 		if (modal) {
