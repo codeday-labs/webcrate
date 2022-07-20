@@ -121,6 +121,13 @@ export default {
 					click: () => {
 						this.showModal('changeName')
 					}
+				},
+				{
+					text: 'Settings',
+					icon: 'settings',
+					click: () => {
+						this.showModal('settingsModal')
+					}
 				}
 			]
 		}
