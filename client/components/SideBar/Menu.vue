@@ -123,12 +123,12 @@ export default {
 					}
 				},
 				{
-					text: 'Change Theme',
+					text: 'Settings',
 					icon: 'settings',
 					click: () => {
-						this.showModal('changeName')
+						this.showModal('settingsModal')
 					}
-				}								
+				}
 			]
 		}
 	},
@@ -150,7 +150,7 @@ export default {
 				this.$store.commit('SET_CURRENT_PAGE', value)
 			},
 			get() {
-				return this.$store.state.currentPage
+				return this.$store.state.currentPages
 			}
 		},
 		loadingCrates: {

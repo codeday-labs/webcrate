@@ -1,4 +1,4 @@
-const modals = [ 'search', 'addLink', 'addCrate', 'addExternalCrate', 'linkDetails', 'confirm', 'copyOutput', 'changeName', 'shareLink', 'bookmarklet', 'changelog', 'viewImage', 'changeCrate' ]
+const modals = [ 'search', 'addLink', 'addCrate', 'addExternalCrate', 'linkDetails', 'confirm', 'copyOutput', 'changeName', 'shareLink', 'bookmarklet', 'changelog', 'viewImage', 'changeCrate', 'settingsModal' ]
 
 export const state = () => ({
 	show: undefined,
@@ -26,7 +26,6 @@ export const mutations = {
 	},
 	show(state, { modal, data }) {
 		if (!modals.includes(modal)) throw new Error(`Unknown modal: ${ modal }`)
-
 		state.show = {
 			...state.show,
 			[modal]: true
