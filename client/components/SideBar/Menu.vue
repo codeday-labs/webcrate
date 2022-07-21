@@ -150,7 +150,7 @@ export default {
 				this.$store.commit('SET_CURRENT_PAGE', value)
 			},
 			get() {
-				return this.$store.state.currentPages
+				return this.$store.state.currentPage
 			}
 		},
 		loadingCrates: {
