@@ -2,9 +2,10 @@
   <Modal class="settings-modal" @close="close">
     <h1>Themes</h1>
     <div class="buttons">
-      <input v-model="active" class="radio" type="radio" value="Light" @click="click('Light')" />
-      <input v-model="active" class="radio" type="radio" value="Dark" @click="click('Dark')" />
-      <input v-model="active" class="radio" type="radio" value="Other" @click="click('Other')" />
+      Current theme: {{activeTheme}}
+      <input v-model="activeTheme" class="radio" type="radio" value="Light" @click="setTheme('light')" />
+      <input v-model="activeTheme" class="radio" type="radio" value="Dark" @click="setTheme('dark')" />
+      <input v-model="activeTheme" class="radio" type="radio" value="Other" @click="setTheme('other')" />
     </div>
   </Modal>
 </template>
@@ -13,16 +14,8 @@
 export default {
 	data() {
 		return {
-			active: 'Light'
+			activeTheme: 'light'
 		}
-	},
-	setTheme(newTheme): {
-		nextClass = ['theme-', newTheme].join('')
-		prevClass = ['theme-', this.active].join('')
-		document.documentElement.setAttribute('data-theme', newTheme)
-		document.body.classList.add(nextClass)
-		document.body.classList.remove(prevClass)
-		this.active = newTheme
 	},
 	computed: {
 		currentSetting: {
@@ -38,10 +31,13 @@ export default {
 		close() {
 			this.$modal.hide()
 		},
-		click(clicked) {
-			if (!(this.active === clicked)) {
-				this.isDark = this.$darkmode.toggle()
-			}
+		setTheme(newTheme) {
+			const nextClass = ['theme-', newTheme].join('')
+			const prevClass = ['theme-', this.activeTheme].join('')
+			document.documentElement.setAttribute('data-theme', newTheme)
+			document.body.classList.add(nextClass)
+			document.body.classList.remove(prevClass)
+			this.activeTheme = newTheme
 		}
 	}
 

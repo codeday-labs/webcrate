@@ -33,6 +33,18 @@
     --text-dark: #CBD5E0;
 }
 
+[data-theme="other"] {
+    --background: #C4F9FF;
+    --background-2nd: #232D3D;
+    --grey: #FF7415;
+    --grey-light: #FF7415;
+    --grey-2nd: #FF7415;
+
+    --text: #FF0000;
+    --text-light: #FF0000;
+    --text-dark: #FF0000;
+}
+
 html,
 body {
     margin: 0;
