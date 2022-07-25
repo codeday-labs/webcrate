@@ -1,16 +1,10 @@
 <template>
   <Modal class="settings-modal" @close="close">
-    <h1>Settings</h1>
+    <h1>Themes</h1>
     <div class="buttons">
-      <button class="button">
-        <Icon name="sun" />Themes
-      </button>
-      <button class="button">
-        <Icon name="code" />Other
-      </button>
-      <button class="button">
-        <Icon name="code" />Other
-      </button>
+      <input v-model="active" class="radio" type="radio" value="Light" @click="click('Light')" />
+      <input v-model="active" class="radio" type="radio" value="Dark" @click="click('Dark')" />
+      <input v-model="active" class="radio" type="radio" value="Other" @click="click('Other')" />
     </div>
   </Modal>
 </template>
@@ -18,7 +12,9 @@
 <script>
 export default {
 	data() {
-		return {}
+		return {
+			active: 'Light'
+		}
 	},
 	computed: {
 		currentSetting: {
@@ -33,6 +29,11 @@ export default {
 	methods: {
 		close() {
 			this.$modal.hide()
+		},
+		click(clicked) {
+			if (!(this.active === clicked)) {
+				this.isDark = this.$darkmode.toggle()
+			}
 		}
 	}
 
@@ -45,15 +46,11 @@ export default {
 			font-size: 1.2rem;
 			margin-bottom: 1rem;
 		}
-	& button {
-			display: flex;
-			align-items: center;
-			margin-top: 0.7rem;
-
-			& div {
-				margin-right: 0.3rem;
-				margin-left: -3px;
-			}
-		}
+	.radio {
+		display: flex;
+		align-items: center;
+		margin-top: 0.7rem;
+	}
   }
+
 </style>

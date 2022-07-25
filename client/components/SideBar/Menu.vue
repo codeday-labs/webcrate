@@ -123,7 +123,7 @@ export default {
 					}
 				},
 				{
-					text: 'Settings',
+					text: 'Themes',
 					icon: 'settings',
 					click: () => {
 						this.showModal('settingsModal')
