@@ -16,6 +16,14 @@ export default {
 			active: 'Light'
 		}
 	},
+	setTheme(newTheme): {
+		nextClass = ['theme-', newTheme].join('')
+		prevClass = ['theme-', this.active].join('')
+		document.documentElement.setAttribute('data-theme', newTheme)
+		document.body.classList.add(nextClass)
+		document.body.classList.remove(prevClass)
+		this.active = newTheme
+	},
 	computed: {
 		currentSetting: {
 			set(value) {
